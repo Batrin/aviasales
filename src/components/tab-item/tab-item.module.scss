@@ -1,0 +1,28 @@
+$tab-border-color: #DFE5EC;
+$tab-default-background: #FFFFFF;
+$tab-border-radius: 5px;
+
+.tab {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid $tab-border-color;
+  flex: 1;
+  background-color: $tab-default-background;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab:first-child {
+  border-top-left-radius: $tab-border-radius;
+  border-bottom-left-radius: $tab-border-radius;
+}
+
+.tab:last-child {
+  border-top-right-radius: $tab-border-radius;
+  border-bottom-right-radius: $tab-border-radius;
+}
+
+.tab.active {
+
+}

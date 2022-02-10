@@ -1,0 +1,33 @@
+$checkbox-background-color: #FFFFFF;
+$checkbox-border-color: #2196F3;
+
+.filter {
+
+}
+
+.check {
+  padding-left: 25px;
+
+  .check__box {
+    margin-left: -25px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: $checkbox-background-color;
+    border: 1px solid $checkbox-border-color;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+
+  .check__input {
+    appearance: none;
+    position: absolute;
+  }
+
+}
+
+.check__input:checked + .check__box {
+  background-image: url("./checked.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
