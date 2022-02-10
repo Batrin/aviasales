@@ -4,6 +4,7 @@ import AppHeader from '../app-header';
 import TabList from '../tab-list';
 import FilterList from '../filter-list/filter-list';
 import TicketList from '../ticket-list';
+import AppFooter from '../app-footer';
 
 function App() {
   const tabsNameArray = ['Самый дешевый', 'Самый быстрый', 'Оптимальный'];
@@ -23,6 +24,7 @@ function App() {
           <div className={classes['content-wrapper__ticket-info']}>
             <TabList tabsNameArray={tabsNameArray} />
             <TicketList ticketArray={ticketsArray} />
+            <AppFooter />
           </div>
         </div>
       </div>
