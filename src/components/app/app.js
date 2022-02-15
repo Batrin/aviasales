@@ -9,7 +9,13 @@ import AppFooter from '../app-footer';
 function App() {
   const tabsNameArray = ['Самый дешевый', 'Самый быстрый', 'Оптимальный'];
 
-  const filtersNameArray = ['Все', 'Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
+  const filtersNameObj = {
+    all: 'Все',
+    withoutTransfer: 'Без пересадок',
+    oneTransfer: '1 пересадка',
+    twoTransfer: '2 пересадки',
+    threeTransfer: '3 пересадки',
+  };
 
   const ticketsArray = ['1', '2', '3', '4', '5'];
 
@@ -19,7 +25,7 @@ function App() {
         <AppHeader />
         <div className={classes['ticket-wrapper']}>
           <div>
-            <FilterList filtersNameArr={filtersNameArray} />
+            <FilterList filtersNameObj={filtersNameObj} />
           </div>
           <div className={classes['content-wrapper__ticket-info']}>
             <TabList tabsNameArray={tabsNameArray} />
