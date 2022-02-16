@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './filter-item.module.scss';
-import { changeFilterState, changeAllFilterState, changeMainFilterState } from '../../actions/actions';
+import { changeFilterState, changeAllFilterState, changeMainFilterState } from '../../actions/syncAction/actions';
 
 function FilterItem({ filterName, filterKey }) {
-  const activeFilterObject = useSelector((state) => state.activeFilterObj);
+  const activeFilterObject = useSelector((state) => state.filter.activeFilterObj);
 
   const isFilterActive = activeFilterObject[filterKey];
 

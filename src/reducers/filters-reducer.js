@@ -1,9 +1,15 @@
-import initialState from '../redux-store/initial-state';
+const defaultFilterState = {
+  activeFilterObj: {
+    all: false,
+    withoutTransfer: false,
+    oneTransfer: false,
+    twoTransfer: false,
+    threeTransfer: false,
+  },
+};
 
-const reducer = (state = initialState, action) => {
+const filtersReducer = (state = defaultFilterState, action) => {
   switch (action.type) {
-    case 'SET_ACTIVE_TAB':
-      return { ...state, activeTabName: action.payload };
     case 'CHANGE_FILTER_STATE':
       return {
         ...state,
@@ -33,4 +39,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default filtersReducer;

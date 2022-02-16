@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { useDispatch } from 'react-redux';
 import classes from './tab-item.module.scss';
-import { setActiveTab } from '../../actions/actions';
+import { setActiveTab } from '../../actions/syncAction/actions';
 
 function TabItem({ tabName, isActiveTab }) {
   const dispatch = useDispatch();

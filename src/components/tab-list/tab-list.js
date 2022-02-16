@@ -5,7 +5,7 @@ import TabItem from '../tab-item/tab-item';
 import classes from './tab-list.module.scss';
 
 function TabList({ tabsNameArray }) {
-  const activeTabName = useSelector((state) => state.activeTabName);
+  const activeTabName = useSelector((state) => state.tab.activeTabName);
 
   const tabsArray = tabsNameArray.map((tabName, tabIndex) => {
     const isActiveTab = tabName === activeTabName;
