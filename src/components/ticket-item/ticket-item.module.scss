@@ -7,4 +7,39 @@ $ticket-background: #FFFFFF;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .ticket-item__header {
+    display: flex;
+    justify-content: space-between;
+    p {
+      color: #2196F3;
+      font-size: 24px;
+    }
+  }
+
+  .ticket-info__section {
+    display: flex;
+    margin-top: 20px;
+
+    .ticket-info__single-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex: 1;
+
+      h2 {
+        font-size: 12px;
+        color: #A0B0B9;
+        font-family: "Open Sans";
+      }
+
+      p {
+        color: #4A4A4A;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
 }

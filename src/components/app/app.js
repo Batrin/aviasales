@@ -6,7 +6,7 @@ import TabList from '../tab-list';
 import FilterList from '../filter-list/filter-list';
 import TicketList from '../ticket-list';
 import AppFooter from '../app-footer';
-import { getSearchId, getTickets } from '../../actions/asyncAction/tickets';
+import { getTickets } from '../../actions/asyncAction/tickets';
 
 function App() {
   const tabsNameArray = ['Самый дешевый', 'Самый быстрый', 'Оптимальный'];
@@ -21,12 +21,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (!localStorage.getItem('searchId')) {
-      getSearchId().then((searchId) => {
-        localStorage.setItem('searchId', searchId);
-      });
-    }
-    dispatch(getTickets(localStorage.getItem('searchId')));
+    dispatch(getTickets());
   }, [dispatch]);
 
   return (
