@@ -1,10 +1,10 @@
 const defaultFilterState = {
   activeFilterObj: {
-    all: false,
-    withoutTransfer: false,
-    oneTransfer: false,
-    twoTransfer: false,
-    threeTransfer: false,
+    all: true,
+    withoutTransfer: true,
+    oneTransfer: true,
+    twoTransfer: true,
+    threeTransfer: true,
   },
 };
 

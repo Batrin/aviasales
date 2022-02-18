@@ -1,5 +1,5 @@
 const defaultTabState = {
-  activeTabName: 'Самый дешевый',
+  activeTabName: 'cost',
 };
 
 const tabReducer = (state = defaultTabState, action) => {

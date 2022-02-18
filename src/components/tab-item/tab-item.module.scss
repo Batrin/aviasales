@@ -12,6 +12,10 @@ $active-tab-background: #2196F3;
   background-color: $tab-default-background;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+
+  &:hover {
+    background: #F1FCFF;
+  }
 }
 
 .tab:first-child {

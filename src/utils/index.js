@@ -41,4 +41,52 @@ export const getTimeObject = (startFlight, duration) => {
   };
 };
 
-console.log(getTimeObject(Date.now(), 60));
+export const filterTickets = (ticketArr, filters) => {
+  if (!ticketArr.length) {
+    return ticketArr;
+  }
+
+  const filtersValues = Object.values(filters).slice(1);
+
+  const filteredTickets = [];
+
+  filtersValues.forEach((filterValue, index) => {
+    if (filterValue) {
+      filteredTickets.push(
+        ...ticketArr.filter((ticket) => {
+          return (
+            (ticket.segments[0].stops.length === index || ticket.segments[1].stops.length === index) &&
+            !filteredTickets.includes(ticket)
+          );
+        })
+      );
+    }
+  });
+
+  return filteredTickets;
+};
+
+const getFlightDuration = (ticket) => {
+  const ticketsSegments = ticket.segments;
+  const flightDuration = ticketsSegments[0].duration + ticketsSegments[1].duration;
+  return flightDuration;
+};
+
+export const sortTickets = (ticketsArr, activeTab) => {
+  switch (activeTab) {
+    case 'cost':
+      return ticketsArr.sort((prevTicket, nextTicket) => {
+        return prevTicket.price - nextTicket.price;
+      });
+    case 'fast':
+      return ticketsArr.sort((prevTicket, nextTicket) => {
+        return getFlightDuration(prevTicket) - getFlightDuration(nextTicket);
+      });
+    case 'optimal':
+      return ticketsArr.sort((prevTicket, nextTicket) => {
+        return getFlightDuration(prevTicket) - getFlightDuration(nextTicket) && prevTicket.price - nextTicket.price;
+      });
+    default:
+      return ticketsArr;
+  }
+};

@@ -2,7 +2,21 @@ $checkbox-background-color: #FFFFFF;
 $checkbox-border-color: #2196F3;
 
 .filter {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px 0 20px;
+  flex: 1;
+  display: flex;
+  align-items: center;
 
+  &:hover {
+    background: #F1FCFF;
+  }
+
+  label {
+    width: 100%;
+    height: 20px;
+  }
 }
 
 .check {

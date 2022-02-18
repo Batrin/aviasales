@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import classes from './tab-item.module.scss';
 import { setActiveTab } from '../../actions/syncAction/actions';
 
-function TabItem({ tabName, isActiveTab }) {
+function TabItem({ tabName, isActiveTab, name }) {
   const dispatch = useDispatch();
 
   const defaultClass = classes.tab;
@@ -17,12 +17,12 @@ function TabItem({ tabName, isActiveTab }) {
   });
 
   const onTabClick = (event) => {
-    const { name } = event.target;
-    dispatch(setActiveTab(name));
+    const activeName = event.target.name;
+    dispatch(setActiveTab(activeName));
   };
 
   return (
-    <button name={tabName} onClick={onTabClick} type="button" aria-label={tabName} className={classNames}>
+    <button name={name} onClick={onTabClick} type="button" aria-label={tabName} className={classNames}>
       {tabName}
     </button>
   );
@@ -31,6 +31,7 @@ function TabItem({ tabName, isActiveTab }) {
 TabItem.propTypes = {
   tabName: PropTypes.string,
   isActiveTab: PropTypes.bool,
+  name: PropTypes.string,
 };
 
 export default TabItem;

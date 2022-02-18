@@ -4,19 +4,22 @@ import { useSelector } from 'react-redux';
 import TabItem from '../tab-item/tab-item';
 import classes from './tab-list.module.scss';
 
-function TabList({ tabsNameArray }) {
+function TabList({ tabsNameObj }) {
   const activeTabName = useSelector((state) => state.tab.activeTabName);
+  const tabsArray = [];
 
-  const tabsArray = tabsNameArray.map((tabName, tabIndex) => {
-    const isActiveTab = tabName === activeTabName;
-    return <TabItem key={tabIndex} tabName={tabName} isActiveTab={isActiveTab} />;
-  });
+  for (const tab in tabsNameObj) {
+    const tabName = tabsNameObj[tab];
+    const isTabActive = activeTabName === tab;
+
+    tabsArray.push(<TabItem key={tab} name={tab} tabName={tabName} isActiveTab={isTabActive} />);
+  }
 
   return <ul className={classes.tabs}>{tabsArray}</ul>;
 }
 
 TabList.propTypes = {
-  tabsNameArray: PropTypes.arrayOf(PropTypes.string),
+  tabsNameObj: PropTypes.instanceOf(Object),
 };
 
 export default TabList;
