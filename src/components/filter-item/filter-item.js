@@ -7,7 +7,7 @@ import {
   changeAllFilterState,
   changeMainFilterState,
   resetLastTicket,
-} from '../../actions/syncAction/actions';
+} from '../../redux-store/actions/syncAction/actions';
 
 function FilterItem({ filterName, filterKey }) {
   const activeFilterObject = useSelector((state) => state.filter.activeFilterObj);

@@ -1,4 +1,4 @@
-const baseUrl = 'https://aviasales-test-api.java-mentor.com';
+const baseUrl = 'https://aviasales-test-api.kata.academy';
 
 const endPoints = {
   search: '/search',

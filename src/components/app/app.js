@@ -4,7 +4,6 @@ import AppHeader from '../app-header';
 import TabList from '../tab-list';
 import FilterList from '../filter-list/filter-list';
 import TicketList from '../ticket-list';
-import AppFooter from '../app-footer';
 import { getSearchId } from '../../api';
 
 function App() {

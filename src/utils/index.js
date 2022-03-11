@@ -84,7 +84,7 @@ export const sortTickets = (ticketsArr, activeTab) => {
       });
     case 'optimal':
       return ticketsArr.sort((prevTicket, nextTicket) => {
-        return getFlightDuration(prevTicket) - getFlightDuration(nextTicket) && prevTicket.price - nextTicket.price;
+        return getFlightDuration(prevTicket) + prevTicket.price - (getFlightDuration(nextTicket) + nextTicket.price);
       });
     default:
       return ticketsArr;

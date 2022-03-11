@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import classes from './ticket-list.module.scss';
 import TicketItem from '../ticket-item';
 import { getSearchId, getTickets } from '../../api';
-import { addTickets, setLoading } from '../../actions/syncAction/actions';
+import { addTickets, setLoading } from '../../redux-store/actions/syncAction/actions';
 import { filterTickets, sortTickets } from '../../utils';
 import Alert from '../alert';
-import AppFooter from '../app-footer';
+import ShowMore from '../show-more';
 
 function TicketList() {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ function TicketList() {
   const filtersTickets = filterTickets(ticketList, filters).slice(0, lastDisplayedTicket);
   const filteredTickets = sortTickets(filtersTickets, activeTab);
   const noTicketAlert = isStop && !filteredTickets.length ? <Alert message={alertMessage.noTicket} /> : null;
-  const footer = filteredTickets.length ? <AppFooter /> : null;
+  const footer = filteredTickets.length ? <ShowMore /> : null;
 
   const getAllTickets = (searchId) => {
     getTickets(searchId).then((res) => {
