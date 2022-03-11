@@ -21,8 +21,8 @@ function TicketList() {
   const filters = useSelector((state) => state.filter.activeFilterObj);
 
   const alert = !isStop ? <Alert message={alertMessage.loading} /> : null;
-  const filtersTickets = filterTickets(ticketList, filters).slice(0, lastDisplayedTicket);
-  const filteredTickets = sortTickets(filtersTickets, activeTab);
+  const filtersTickets = filterTickets(ticketList, filters);
+  const filteredTickets = sortTickets(filtersTickets, activeTab).slice(0, lastDisplayedTicket);
   const noTicketAlert = isStop && !filteredTickets.length ? <Alert message={alertMessage.noTicket} /> : null;
   const footer = filteredTickets.length ? <ShowMore /> : null;
 
